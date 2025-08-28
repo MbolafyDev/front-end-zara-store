@@ -1,0 +1,5 @@
+#promoCarousel .carousel-item img {
+  height: 280px;        /* 56px * 5 = 280px */
+  object-fit: cover;    /* pour garder une belle coupe */
+}
+

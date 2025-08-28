@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Zara Store - Checkout</title>
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Font Awesome 6 -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+  <style>
+    /* Card image carrée */
+    .card-img-top {
+      aspect-ratio: 1 / 1;
+      object-fit: cover;
+    }
+    /* Badge étiquette */
+    .card-produit {
+      position: relative;
+    }
+    .card-produit .badge {
+      position: absolute;
+      top: 10px;
+      left: 10px;
+      padding: 0.5rem 0.75rem;
+      font-size: 0.85rem;
+      font-weight: bold;
+      border-radius: 0.25rem 0.75rem 0.75rem 0.25rem;
+      z-index: 10;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.3);
+    }
+  </style>
+</head>
+<body>
+
+<!-- ================= NAVBAR ================= -->
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <div class="container-fluid">
+    <a class="navbar-brand d-flex align-items-center" href="#">
+      <img src="images/logo.jpg" alt="Zara Logo" width="40" class="me-2">
+      <span class="text-dark">Zara Store</span>
+    </a>
+
+    <form class="mx-3 w-50">
+      <div class="input-group">
+        <input type="search" class="form-control" placeholder="Qu'est-ce qui vous ferait plaisir ?" aria-label="Search">
+        <button class="btn btn-primary" type="submit"><i class="fas fa-search"></i></button>
+      </div>
+    </form>
+
+    <div class="d-flex align-items-center">
+      <a href="#" class="me-3 text-dark"><i class="fas fa-envelope"></i></a>
+      <a href="#" class="me-3 text-dark"><i class="fas fa-user"></i> Identifiez-vous</a>
+      <a href="#" class="position-relative text-dark">
+        <i class="fas fa-shopping-cart fa-lg"></i>
+        <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">0</span>
+      </a>
+    </div>
+  </div>
+</nav>
+
+<!-- ================= SOUS-MENU ================= -->
+<div class="py-2 border-bottom" style="background-color: #0dcaf0;">
+  <div class="container d-flex justify-content-center flex-wrap gap-2">
+    <a href="#" class="btn btn-light">NOS PRODUITS</a>
+    <a href="#" class="btn btn-light">GAMME APPLE</a>
+    <a href="#" class="btn btn-info text-white">LA RENTRÉE</a>
+    <a href="#" class="btn btn-light">CALCULATRICE</a>
+    <a href="#" class="btn btn-light">DISPO EN 48H</a>
+    <a href="#" class="btn btn-light">BLOG</a>
+  </div>
+</div>
+
+<!-- ================= PAGE CHECKOUT ================= -->
+<section class="container my-5">
+  <h2 class="mb-4">Votre Panier</h2>
+  <div class="row">
+    <!-- Colonne gauche: produits -->
+    <div class="col-lg-8 mb-4">
+      <div class="list-group">
+        <!-- Produit 1 -->
+        <div class="list-group-item d-flex justify-content-between align-items-center">
+          <div class="d-flex align-items-center">
+            <img src="images/4.png" alt="Produit 1" class="me-3" style="width:80px; aspect-ratio:1/1; object-fit:cover;">
+            <div>
+              <h6 class="mb-1">Réchaud à Pétrole 5L</h6>
+              <small class="text-muted">Quantité: 1</small>
+            </div>
+          </div>
+          <div>
+            <span class="text-decoration-line-through text-muted">65 000 Ar</span>
+            <span class="fw-bold text-danger ms-2">55 000 Ar</span>
+          </div>
+        </div>
+
+        <!-- Produit 2 -->
+        <div class="list-group-item d-flex justify-content-between align-items-center">
+          <div class="d-flex align-items-center">
+            <img src="images/_20250311_Applique murale_Zara Store.png" alt="Produit 2" class="me-3" style="width:80px; aspect-ratio:1/1; object-fit:cover;">
+            <div>
+              <h6 class="mb-1">Applique murale</h6>
+              <small class="text-muted">Quantité: 2</small>
+            </div>
+          </div>
+          <div>
+            <span class="text-decoration-line-through text-muted">45 000 Ar</span>
+            <span class="fw-bold text-danger ms-2">40 000 Ar</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Total -->
+      <div class="mt-4 d-flex justify-content-end">
+        <h5>Total: <span class="text-danger">135 000 Ar</span></h5>
+      </div>
+    </div>
+
+    <!-- Colonne droite: formulaire paiement -->
+    <div class="col-lg-4">
+      <h4 class="mb-3">Paiement</h4>
+      <form>
+        <div class="mb-3">
+          <label for="name" class="form-label">Nom complet</label>
+          <input type="text" class="form-control" id="name" placeholder="John Doe">
+        </div>
+        <div class="mb-3">
+          <label for="email" class="form-label">Email</label>
+          <input type="email" class="form-control" id="email" placeholder="email@example.com">
+        </div>
+        <div class="mb-3">
+          <label for="address" class="form-label">Adresse</label>
+          <input type="text" class="form-control" id="address" placeholder="Adresse de livraison">
+        </div>
+        <div class="mb-3">
+          <label for="card" class="form-label">Carte bancaire</label>
+          <input type="text" class="form-control" id="card" placeholder="Numéro de carte">
+        </div>
+        <button type="submit" class="btn btn-primary w-100">Valider la commande</button>
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- ================= FOOTER ================= -->
+<footer class="bg-dark text-white pt-5 pb-3">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-6 mb-4">
+        <h5 class="mb-3">Contactez-nous</h5>
+        <ul class="list-unstyled">
+          <li class="mb-2"><i class="fas fa-envelope me-2"></i> <a href="mailto:contact@zarastore.com" class="text-white text-decoration-none">contact@zarastore.com</a></li>
+          <li class="mb-2"><i class="fab fa-whatsapp me-2"></i> <a href="https://wa.me/261123456789" class="text-white text-decoration-none" target="_blank">+261 12 345 6789</a></li>
+          <li class="mb-2"><i class="fas fa-phone me-2"></i> <a href="tel:+261123456789" class="text-white text-decoration-none">+261 12 345 6789</a></li>
+        </ul>
+      </div>
+      <div class="col-md-6 mb-4">
+        <h5 class="mb-3">Suivez-nous</h5>
+        <div class="d-flex gap-3">
+          <a href="#" class="text-white fs-4"><i class="fab fa-facebook"></i></a>
+          <a href="#" class="text-white fs-4"><i class="fab fa-instagram"></i></a>
+          <a href="#" class="text-white fs-4"><i class="fab fa-twitter"></i></a>
+          <a href="#" class="text-white fs-4"><i class="fas fa-envelope"></i></a>
+        </div>
+      </div>
+    </div>
+    <hr class="bg-light">
+    <div class="text-center small">&copy; 2025 Zara Store. Tous droits réservés.</div>
+  </div>
+</footer>
+
+<!-- Bootstrap JS -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
